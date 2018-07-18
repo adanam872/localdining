@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>동네맛집</title>
+    <title>LoDeli</title>
     <script src="js/jquery.js"></script>
     <script>
         
@@ -28,7 +28,11 @@
         });
     </script>
     <style>
-        body {
+        @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+        body, table, div, p {font-family:'Nanum Gothic';}
+
+        html, body {
             margin: 0;
         }
 
@@ -53,19 +57,163 @@
             position: absolute;
             width: 100%;
             text-align: center;
-            color: white;
-            top: 50%;
-            margin-top: -10em;
+            color: rgba(255, 255, 255, 0.8);
+            top: 38%;
+        }
+
+        #firstpageTop {
+            margin-top: 17px;
+            padding: 0;
+            width: 100%;
+            display: flex;
+        }
+
+        #firstpageNav {
+            display: inline;
+        }
+
+        #hiddenMenu {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            #firstpageNav {
+                display: none;
+            }
+
+            #userimage {
+                position: absolute;
+                right: 20px !important;
+            }
+
+            #hiddenMenu {
+               display: inline;
+               position: absolute;
+               left: 20px;
+            } 
+
+            .container {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .bar1, .bar2, .bar3 {
+                width: 40px;
+                height: 7px;
+                background-color: rgba(255, 255, 255, 0.8);
+                margin: 6px 0;
+                transition: 0.4s;
+            }
+
+            #firstpageFooter {
+                display: none;
+            }
+
+            #leftMenuBar {
+                display: inline;
+                text-decoration: none;
+                font-size: 15px;
+            }
+        }
+
+        #firstpageNav li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        #firstpageNav li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+        }
+
+        #userimage {
+            position: absolute;
+            margin-top: 5px;
+            width: 40px;
+            border-radius: 100%;
+            border: 2px rgba(255, 255, 255, 0.5) solid;
+            right: 40px;
+        }
+
+        #leftMenuBar {
+            display: none;
+        }
+
+        #searchText {
+            width: 200px;
+            height: 35px;
+        }
+
+        #searchButton img { 
+            margin-bottom: -12px;
+            width: 35px;
+            height: 35px;
+        }
+
+        #firstpageFooter {
+            width: 100%;
+            height: 30px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            position: absolute;
+            bottom: 0%;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
     <div class="firstpageBackground" ></div>
     <div class="firstpageContent">
+        <div id="firstpageTop">
+            <ul id="firstpageNav">
+                <li><a href="#">로컬다이닝</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">매거진</a></li>
+            </ul>
+            <a href="#"><img src="img/anonymous.png" alt="로그인" id="userimage"></a>
+            
+        </div>
+
+        <div id="hiddenMenu">
+            <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+
+        <div id="leftMenuBar">
+            <ul id="leftMenu">
+                <li><a href="#">로컬다이닝</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">매거진</a></li>
+            </ul>        
+        </div>
+
         <div class="firstpageLogo">
             <h1>LoDeli</h1>
-            <p>맛집은 동네에있다</p>
+            <div id="searchForm">
+                <form action="#">
+                    <input type="search" name="" id="searchText">
+                    <a id="searchButton"><img src="img/search.png" alt="검색"></a>
+                </form>
+            </div>  
         </div>
+
+        <div id="firstpageFooter">
+            (주)로컬다이닝 서울특별시 서초구 서초대로74길 33, 503호<br>
+            © 2018 LoDeli Co., Ltd. All rights reserved.
+        </div>
+
+        
     </div>
 </body>
 </html>
