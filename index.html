@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>동네맛집</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        
+        $(function() {
+            var pageNum = 1;
+
+            setInterval(function backgroundChange() {
+                addNum();
+                $(".firstpageBackground").fadeTo(150 , 0.3, function() {
+                    $(".firstpageBackground").css({"background":"url(./img/bg/"+pageNum+".jpg) center no-repeat"});
+                }).fadeTo(150,1);
+            }, 9000);
+
+            function addNum() {
+                if (pageNum >= 8) {
+                    pageNum = 1;
+                } else {
+                    pageNum++;
+                }
+            }
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .firstpageBackground {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background: url(./img/bg/1.jpg) center no-repeat;
+            background-size: cover;
+        }
+
+        .firstpageContent {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .firstpageLogo {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            color: white;
+            top: 50%;
+            margin-top: -10em;
+        }
+    </style>
+</head>
+<body>
+    <div class="firstpageBackground" ></div>
+    <div class="firstpageContent">
+        <div class="firstpageLogo">
+            <h1>LoDeli</h1>
+            <p>맛집은 동네에있다</p>
+        </div>
+    </div>
+</body>
+</html>
