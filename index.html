@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LoDeli</title>
-    <script src="js/jquery.js"></script>
-    <script>
-        
-        $(function() {
-            var pageNum = 1;
 
-            setInterval(function backgroundChange() {
-                addNum();
-                $(".firstpageBackground").fadeTo(150 , 0.3, function() {
-                    $(".firstpageBackground").css({"background":"url(./img/bg/"+pageNum+".jpg) center no-repeat"});
-                }).fadeTo(150,1);
-            }, 9000);
-
-            function addNum() {
-                if (pageNum >= 8) {
-                    pageNum = 1;
-                } else {
-                    pageNum++;
-                }
-            }
-        });
-    </script>
     <style>
         @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
-        body, table, div, p {font-family:'Nanum Gothic';}
+        body,
+        table,
+        div,
+        p {
+            font-family: 'Nanum Gothic';
+        }
 
-        html, body {
+        html,
+        body {
             margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .firstpageBackground {
@@ -87,17 +83,20 @@
             }
 
             #hiddenMenu {
-               display: inline;
-               position: absolute;
-               left: 20px;
-            } 
+                display: inline;
+                position: absolute;
+                left: 20px;
+                z-index: 1001;
+            }
 
             .container {
                 display: inline-block;
                 cursor: pointer;
             }
 
-            .bar1, .bar2, .bar3 {
+            .bar1,
+            .bar2,
+            .bar3 {
                 width: 40px;
                 height: 7px;
                 background-color: rgba(255, 255, 255, 0.8);
@@ -110,9 +109,33 @@
             }
 
             #leftMenuBar {
-                display: inline;
+                position: fixed;
+                left: -180px;
+                top: 0;
+                height: 100%;
+                display: block !important;
+                background-color: rgba(0, 0, 0, 0.9);
+                width: 180px;
+                transition: 0.4s;
+                z-index: 1000;
+            }
+
+            #leftMenu {
+                padding-top: 100px !important;
+            }
+
+            #leftMenu li {
+                padding-left: 20px; 
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px rgba(255, 255, 255, 0.8) solid;
                 text-decoration: none;
+                color: rgba(255, 255, 255, 0.8);
                 font-size: 15px;
+            }
+
+            #leftMenuFir {
+                border-top: 1px rgba(255, 255, 255, 0.8) solid;
             }
         }
 
@@ -145,10 +168,10 @@
             height: 35px;
         }
 
-        #searchButton img { 
-            margin-bottom: -12px;
-            width: 35px;
-            height: 35px;
+        #searchButton img {
+            margin-bottom: -24px;
+            width: 55px;
+            height: 55px;
         }
 
         #firstpageFooter {
@@ -165,23 +188,36 @@
         }
     </style>
 </head>
+
 <body>
-    <div class="firstpageBackground" ></div>
+    <div class="firstpageBackground"></div>
     <div class="firstpageContent">
         <div id="firstpageTop">
             <ul id="firstpageNav">
-                <li><a href="#">로컬다이닝</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">이벤트</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">매거진</a></li>
+                <li>
+                    <a href="#">로컬다이닝</a>
+                </li>
+                <li>
+                    <a href="#">공지사항</a>
+                </li>
+                <li>
+                    <a href="#">이벤트</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">매거진</a>
+                </li>
             </ul>
-            <a href="#"><img src="img/anonymous.png" alt="로그인" id="userimage"></a>
-            
+            <a href="#">
+                <img src="img/anonymous.png" alt="로그인" id="userimage">
+            </a>
+
         </div>
 
         <div id="hiddenMenu">
-            <div class="container" onclick="myFunction(this)">
+            <div class="container">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -190,12 +226,22 @@
 
         <div id="leftMenuBar">
             <ul id="leftMenu">
-                <li><a href="#">로컬다이닝</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">이벤트</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">매거진</a></li>
-            </ul>        
+                <li id="leftMenuFir">
+                    <a href="#">로컬다이닝</a>
+                </li>
+                <li>
+                    <a href="#">공지사항</a>
+                </li>
+                <li>
+                    <a href="#">이벤트</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">매거진</a>
+                </li>
+            </ul>
         </div>
 
         <div class="firstpageLogo">
@@ -203,17 +249,52 @@
             <div id="searchForm">
                 <form action="#">
                     <input type="search" name="" id="searchText">
-                    <a id="searchButton"><img src="img/search.png" alt="검색"></a>
+                    <a id="searchButton">
+                        <img src="img/search.png" alt="검색">
+                    </a>
                 </form>
-            </div>  
+            </div>
         </div>
 
         <div id="firstpageFooter">
-            (주)로컬다이닝 서울특별시 서초구 서초대로74길 33, 503호<br>
-            © 2018 LoDeli Co., Ltd. All rights reserved.
+            (주)로컬다이닝 서울특별시 서초구 서초대로74길 33, 503호
+            <br> © 2018 LoDeli Co., Ltd. All rights reserved.
         </div>
-
-        
     </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            var pageNum = 1;
+
+            setInterval(function backgroundChange() {
+                addNum();
+                $(".firstpageBackground").fadeTo(150, 0.3, function () {
+                    $(".firstpageBackground").css({
+                        "background": "url(./img/bg/" + pageNum +
+                            ".jpg) center no-repeat"
+                    });
+                }).fadeTo(150, 1);
+            }, 9000);
+
+            function addNum() {
+                if (pageNum >= 8) {
+                    pageNum = 1;
+                } else {
+                    pageNum++;
+                }
+            }
+        });
+
+        var menuCnt = 0;
+        $(".container").click(function() {
+            if (menuCnt % 2 == 0) $("#leftMenuBar").css("left","0");
+            else $("#leftMenuBar").css("left","-180px");
+            menuCnt++;
+        });
+    </script>
+
 </body>
+
 </html>
