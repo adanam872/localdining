@@ -1,0 +1,170 @@
+@charset "utf-8";
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+body,
+table,
+div,
+p {
+    font-family: 'Nanum Gothic';
+}
+
+html,
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.firstpageBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url(../img/bg/1.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.firstpageContent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.firstpageLogo {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    top: 38%;
+}
+
+#firstpageTop {
+    margin-top: 17px;
+    padding: 0;
+    width: 100%;
+    display: flex;
+}
+
+#firstpageNav {
+    display: inline;
+}
+
+#hiddenMenu {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    #firstpageNav {
+        display: none;
+    }
+    #userimage {
+        position: absolute;
+        right: 20px !important;
+    }
+    #hiddenMenu {
+        display: inline;
+        position: absolute;
+        left: 20px;
+        z-index: 1001;
+    }
+    .container {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 40px;
+        height: 7px;
+        background-color: rgba(255, 255, 255, 0.8);
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    #firstpageFooter {
+        display: none;
+    }
+    #leftMenuBar {
+        position: fixed;
+        left: -180px;
+        top: 0;
+        height: 100%;
+        display: block !important;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 180px;
+        transition: 0.4s;
+        z-index: 1000;
+    }
+    #leftMenu {
+        padding-top: 100px !important;
+    }
+    #leftMenu li {
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px rgba(255, 255, 255, 0.8) solid;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 15px;
+    }
+    #leftMenuFir {
+        border-top: 1px rgba(255, 255, 255, 0.8) solid;
+    }
+}
+
+#firstpageNav li {
+    display: inline;
+    margin-right: 15px;
+}
+
+#firstpageNav li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+
+#userimage {
+    position: absolute;
+    margin-top: 5px;
+    width: 40px;
+    border-radius: 100%;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+    right: 40px;
+}
+
+#leftMenuBar {
+    display: none;
+}
+
+#searchText {
+    width: 200px;
+    height: 35px;
+}
+
+#searchButton img {
+    margin-bottom: -24px;
+    width: 55px;
+    height: 55px;
+}
+
+#firstpageFooter {
+    width: 100%;
+    height: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: absolute;
+    bottom: 0%;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-size: 13px;
+}

@@ -1,0 +1,71 @@
+@charset "utf-8";
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+body,
+table,
+div,
+p {
+    font-family: 'Nanum Gothic';
+}
+
+a {
+    text-decoration: none;
+}
+
+#loginForm {
+    height: 240px;
+    width: 280px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: -125px;
+    text-align: center;
+}
+
+#loginLabel {
+    margin: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+
+.inputText {
+    width: 92%;
+    margin-bottom: 10px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#topLogo {
+    margin-top: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(190, 60, 110, 0.7);
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+
+#topLogo a {
+    color: rgba(190, 60, 110, 0.7);
+}
+
+#loginButton {
+    width: 93%;
+    height: 30px;
+    border: none;
+    background-color: rgba(0, 0, 0);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#joinButton {
+    width: 93%;
+    height: 30px;
+    border: none;
+    background-color: rgba(190, 60, 110, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}

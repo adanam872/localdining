@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+body,
+table,
+div,
+p {
+    font-family: 'Nanum Gothic';
+}
+
+a {
+    text-decoration: none;
+}
+
+#topLogo {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3)
+}
+
+#topLogo a {
+    color: rgba(190, 60, 110, 0.7);
+}
+
+#joinForm {
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: 20px;
+}
+
+.inputText {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#button {
+    width: 100%;
+    height: 33px;
+    border: none;
+    background-color: rgba(190, 60, 110, 0.5);
+    ;
+}
